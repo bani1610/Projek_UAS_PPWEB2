@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\CreateGroup;
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
 use App\Livewire\Chat;
@@ -20,6 +21,7 @@ Route::middleware(['auth'])->group(function () {
     Volt::route('settings/appearance', 'settings.appearance')->name('settings.appearance');
 
     Route::get("chat", Chat::class)->name("chat");
+     Route::get("groups/create", CreateGroup::class)->name("groups.create");
 });
 
 require __DIR__.'/auth.php';
