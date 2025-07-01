@@ -12,7 +12,6 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('chat_messages', function (Blueprint $table) {
-            // Ubah kolom receiver_id menjadi nullable
             $table->foreignId('receiver_id')->nullable()->change();
         });
     }
@@ -23,8 +22,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('chat_messages', function (Blueprint $table) {
-            // Ubah kembali kolom receiver_id menjadi not nullable (jika ingin)
-            // Ini mungkin memerlukan nilai default atau penanganan data yang sudah ada
             $table->foreignId('receiver_id')->nullable(false)->change();
         });
     }

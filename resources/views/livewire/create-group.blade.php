@@ -1,11 +1,10 @@
 <div class="flex flex-col items-start w-full">
-        <div class="relative mb-6 w-full">
+        <div class="mb-6 w-full shadow-md rounded-2xl p-5 bg-gray-200 dark:bg-blue-800">
             <flux:heading size="xl" level="1">{{ __('Create New Academic Group') }}</flux:heading>
             <flux:subheading size="lg" class="mb-6">{{ __('Create a group for your course discussions.') }}</flux:subheading>
             <flux:separator variant="subtle" />
         </div>
-        <div class="w-full"">
-            <form wire:submit="createGroup" class="max-w-lg mx-auto bg-white p-6 rounded-xl shadow-sm space-y-6 dark:bg-zinc-800 dark:border-zinc-700">
+            <form wire:submit="createGroup" class="w-full max-w-3xl mx-auto bg-white p-6 rounded-xl shadow-sm space-y-6 dark:bg-zinc-800 dark:border-zinc-700">
                 <flux:input
                     wire:model="name"
                     :label="__('Group Name')"
@@ -41,5 +40,4 @@
                     </flux:button>
                 </div>
             </form>
-        </div>
     </div>

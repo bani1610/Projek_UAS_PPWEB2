@@ -1,7 +1,8 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
 <div>
-    <div class="relative mb-6 w-full">
+    <div class="mb-6 w-full shadow-md rounded-2xl p-5 bg-gray-200 text-center tex">
         <flux:heading size="xl" level="1">{{ __('Chat') }}</flux:heading>
-        <flux:subheading size="lg" class="mb-6">{{ __('') }}</flux:subheading>
+        <flux:subheading size="lg" class="mb-6">{{ __('Enjoy your chat.') }}</flux:subheading>
         <flux:separator variant="subtle" />
     </div>
 
@@ -9,7 +10,9 @@
         <div class="w-1/4 border-r bg-gray-50 dark:bg-zinc-900 dark:border-zinc-700">
             <div class="p-4 font-bold text-gray-700 border-b dark:text-white dark:border-zinc-700">Chats</div>
             <div class="divide-y divide-gray-200 dark:divide-zinc-700">
-                <h3 class="p-3 text-sm font-semibold text-gray-600 dark:text-zinc-400">Direct Messages</h3>
+                <h3 class="p-3 text-sm font-semibold text-gray-600 dark:text-zinc-400">
+                    Direct Messages<i class="fa-solid fa-user"></i>
+                </h3>
                 @forelse ($users as $user)
                     <div wire:click="selectUser({{ $user->id }})" class="p-3 cursor-pointer hover:bg-blue-100 dark:hover:bg-blue-900/20 transition
                         {{ $selectedChat instanceof \App\Models\User && $selectedChat->id === $user->id ? 'bg-blue-50 dark:bg-blue-900/50 font-semibold' : ''}}">
