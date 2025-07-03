@@ -8,7 +8,8 @@ use Illuminate\Validation\Rules;
 use Livewire\Attributes\Layout;
 use Livewire\Volt\Component;
 
-new #[Layout('components.layouts.auth')] class extends Component {
+new #[Layout('components.layouts.auth')] class extends Component
+{
     public string $name = '';
     public string $email = '';
     public string $password = '';
@@ -31,7 +32,7 @@ new #[Layout('components.layouts.auth')] class extends Component {
 
         Auth::login($user);
 
-        $this->redirectIntended(route('dashboard', absolute: false), navigate: true);
+       $this->redirectIntended(route('chat', absolute: false), navigate: true);
     }
 }; ?>
 
