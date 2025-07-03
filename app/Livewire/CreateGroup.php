@@ -28,6 +28,7 @@ class CreateGroup extends Component
         $this->users = User::where('id', '!=', Auth::id())->get(); // Ambil semua pengguna kecuali diri sendiri
     }
 
+
     public function createGroup()
     {
         $validated = $this->validate([
@@ -54,5 +55,6 @@ class CreateGroup extends Component
         session()->flash('message', 'Grup berhasil dibuat!');
         $this->redirect(route('chat', ['group' => $group->id]), navigate: true); 
     }
+
 
 }

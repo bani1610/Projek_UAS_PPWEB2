@@ -19,7 +19,7 @@
                     <flux:navlist.item icon="chat-bubble-oval-left-ellipsis" :href="route('chat')" :current="request()->routeIs('chat')" wire:navigate>{{ __('Chat') }}</flux:navlist.item>
                     @auth
                         @if (Auth::user()->isLecturer()) {{-- Periksa apakah pengguna adalah dosen --}}
-                            <flux:navlist.item icon="plus-circle" :href="route('groups.create')" :current="request()->routeIs('groups.create')" wire:navigate>
+                            <flux:navlist.item icon="user-group" :href="route('groups.create')" :current="request()->routeIs('groups.create')" wire:navigate>
                                 {{ __('Create New Group') }}
                             </flux:navlist.item>
                         @endif
