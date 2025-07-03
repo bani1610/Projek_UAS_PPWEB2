@@ -13,6 +13,8 @@ class CreateGroup extends Component
 {
     public string $name = '';
     public ?string $description = '';
+
+    public $search = '';
     public array $selectedMembers = []; // Untuk memilih anggota
 
     public $users; // Daftar pengguna yang bisa ditambahkan ke grup
@@ -50,11 +52,7 @@ class CreateGroup extends Component
         }
 
         session()->flash('message', 'Grup berhasil dibuat!');
-        $this->redirect(route('chat', ['group' => $group->id]), navigate: true); // Redirect ke chat grup baru
+        $this->redirect(route('chat', ['group' => $group->id]), navigate: true); 
     }
 
-    public function render()
-    {
-        return view('livewire.create-group');
-    }
 }
